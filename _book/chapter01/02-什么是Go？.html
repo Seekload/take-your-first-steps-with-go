@@ -1,0 +1,319 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>什么是Go？ · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03-安装 Go.html" />
+    
+    
+    <link rel="prev" href="01-简介.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.md">
+            
+                <span>
+            
+                    
+                    Go入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01-简介.html">
+            
+                <a href="01-简介.html">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="02-什么是Go？.html">
+            
+                <a href="02-什么是Go？.html">
+            
+                    
+                    什么是Go？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="03-安装 Go.html">
+            
+                <a href="03-安装 Go.html">
+            
+                    
+                    安装 Go
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="04-Go Playground.html">
+            
+                <a href="04-Go Playground.html">
+            
+                    
+                    Go Playground
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >什么是Go？</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4EC0;&#x4E48;&#x662F;-go&#xFF1F;">&#x4EC0;&#x4E48;&#x662F; Go&#xFF1F;</h1>
+<p>Go &#x662F; Google &#x5F00;&#x53D1;&#x7684;&#x4E00;&#x79CD;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x4E8E; 2009 &#x5E74;&#x7531; Robert Griesemer&#x3001;Rob Pike &#x548C; Ken Thompson &#x4F5C;&#x4E3A;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x53D1;&#x5E03;&#x3002; &#x4ECE;&#x90A3;&#x65F6;&#x8D77;&#xFF0C;Go &#x5C31;&#x88AB;&#x7528;&#x4E8E;&#x5F00;&#x53D1;&#x5176;&#x4ED6;&#x4F17;&#x6240;&#x5468;&#x77E5;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x5982; Docker&#x3001;Kubernetes&#x3001;Terraform &#x7B49;&#x3002; &#x4F46; Go &#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x901A;&#x7528;&#x8BED;&#x8A00;&#x3002; &#x8BE5;&#x8BED;&#x8A00;&#x7684;&#x76EE;&#x6807;&#x662F;&#x4F7F;&#x7A0B;&#x5E8F;&#x5458;&#x5728;&#x7F16;&#x5199;&#x53EF;&#x9760;&#x800C;&#x5F3A;&#x5927;&#x7684;&#x4EE3;&#x7801;&#x65F6;&#x8868;&#x73B0;&#x529B;&#x5F3A;&#x3001;&#x9AD8;&#x6548;&#x4E14;&#x6709;&#x6548;&#x3002;</p>
+<p>&#x6839;&#x636E; <a href="https://www.tiobe.com/tiobe-index/" target="_blank">TIOBE &#x7D22;&#x5F15;</a>&#xFF0C;<a href="https://insights.dice.com/2017/01/10/go-tiobe-programming-language-2016/" target="_blank">Go &#x662F; 2009 &#x548C; 2016 &#x5E74;&#x7684;&#x5E74;&#x5EA6;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;</a>&#x3002; &#x5C3D;&#x7BA1; Go &#x5728; 2016 &#x5E74;&#x8FBE;&#x5230;&#x4E86;&#x4E34;&#x754C;&#x70B9;&#xFF0C;&#x4F46;&#x5B83;<a href="https://www.tiobe.com/tiobe-index/go/" target="_blank">&#x4ECD;&#x4FDD;&#x6301;&#x7740;&#x5F88;&#x597D;&#x7684;&#x53E3;&#x7891;</a>&#x3002; &#x81EA; 2015 &#x5E74;&#x4EE5;&#x6765;&#xFF0C;&#x6839;&#x636E;<a href="https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted" target="_blank">&#x5E74;&#x5EA6; Stack Overflow &#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x8C03;&#x67E5;</a>&#xFF0C;Go &#x8FD8;&#x88AB;&#x8BC4;&#x4E3A;&#x6700;&#x53D7;&#x6B22;&#x8FCE;&#x7684;&#x8BED;&#x8A00;&#x4E4B;&#x4E00;&#x3002;</p>
+<p>Go &#x4E0E; C &#x6709;&#x5F88;&#x591A;&#x76F8;&#x4F3C;&#x4E4B;&#x5904;&#xFF0C;&#x5B83;&#x7EE7;&#x627F;&#x4E86; C &#x8BED;&#x6CD5;&#x3001;&#x63A7;&#x5236;&#x6D41;&#x8BED;&#x53E5;&#x3001;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3001;&#x6307;&#x9488;&#x548C;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x7684;&#x8BB8;&#x591A;&#x65B9;&#x9762;&#x3002; &#x4F46;&#x662F;&#xFF0C;Go &#x4E0D;&#x4EC5;&#x4EC5;&#x662F; C &#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;&#x3002;&#x5B83;&#x501F;&#x9274;&#x5E76;&#x6539;&#x7F16;&#x4E86;&#x5176;&#x4ED6;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x521B;&#x610F;&#xFF0C;&#x540C;&#x65F6;&#x5220;&#x9664;&#x4E86;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x590D;&#x6742;&#x529F;&#x80FD;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x7F16;&#x7A0B;&#x8303;&#x4F8B;&#x7684;&#x67D0;&#x4E9B;&#x90E8;&#x5206;&#x5728; Go &#x4E2D;&#x6CA1;&#x6709;&#x5B8C;&#x5168;&#x5B9E;&#x73B0;&#x3002; &#x4F60;&#x5C06;&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4E00;&#x4E9B;&#x6A21;&#x5757;&#x4E2D;&#x4E86;&#x89E3;&#x539F;&#x56E0;&#x3002;</p>
+<p>Go &#x5728;&#x4EE5;&#x4E0B;&#x4E3B;&#x9898;&#x4E2D;&#x975E;&#x5E38;&#x60EF;&#x7528;&#xFF1A;&#x6E90;&#x4EE3;&#x7801;&#x683C;&#x5F0F;&#x3001;&#x7981;&#x6B62;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x3001;&#x4E0D;&#x9700;&#x8981; IDE&#x3001;&#x76F8;&#x6BD4;&#x6846;&#x67B6;&#x66F4;&#x503E;&#x5411;&#x4E8E;&#x6807;&#x51C6;&#x5E93;&#x4EE5;&#x53CA;&#x63D0;&#x4F9B;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x548C;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#x7B49;&#x3002;</p>
+<p>Go &#x5728; Unix &#x7CFB;&#x7EDF;&#xFF08;&#x5982; Linux &#x548C; macOS&#xFF09;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x5E76;&#x4E14;&#x8FD8;&#x652F;&#x6301; Windows&#x3002;</p>
+<h3 id="go-&#x539F;&#x5219;">Go &#x539F;&#x5219;</h3>
+<p>&#x82E5;&#x8981;&#x4E86;&#x89E3; Go &#x4E2D;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x6709;&#x5FC5;&#x8981;&#x4E86;&#x89E3;&#x8FD9;&#x79CD;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x80CC;&#x540E;&#x7684;&#x539F;&#x5219;&#xFF1A;</p>
+<ul>
+<li>Go &#x81F4;&#x529B;&#x4E8E;&#x4F7F;&#x4E8B;&#x60C5;&#x53D8;&#x5F97;&#x7B80;&#x5355;&#xFF0C;&#x7528;&#x66F4;&#x5C11;&#x7684;&#x4EE3;&#x7801;&#x884C;&#x6267;&#x884C;&#x66F4;&#x591A;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>&#x5E76;&#x53D1;&#x662F;&#x9996;&#x9009;&#xFF0C;&#x51FD;&#x6570;&#x53EF;&#x4F5C;&#x4E3A;&#x8F7B;&#x91CF;&#x7EBF;&#x7A0B;&#x8FD0;&#x884C;&#x3002;</li>
+<li>&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x76EE;&#x6807;&#x662F;&#x4E0E; C &#x4E00;&#x6837;&#x5FEB;&#x3002;</li>
+<li>Go &#x8981;&#x6C42;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x662F;&#x663E;&#x5F0F;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5F15;&#x53D1;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#x3002;</li>
+<li>&#x672A;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x4E0D;&#x662F;&#x8B66;&#x544A;&#xFF0C;&#x800C;&#x662F;&#x9519;&#x8BEF;&#xFF0C;&#x4EE3;&#x7801;&#x5C06;&#x4E0D;&#x4F1A;&#x7F16;&#x8BD1;&#x3002;</li>
+<li>&#x6709;&#x4E00;&#x79CD;&#x5B98;&#x65B9;&#x683C;&#x5F0F;&#x8BBE;&#x7F6E;&#xFF0C;&#x6709;&#x52A9;&#x4E8E;&#x4FDD;&#x6301;&#x9879;&#x76EE;&#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x3002;</li>
+<li>Go &#x5E76;&#x4E0D;&#x9002;&#x7528;&#x4E8E;&#x6846;&#x67B6;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x66F4;&#x503E;&#x5411;&#x4E8E;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x5E93;&#x3002;</li>
+<li>Go &#x786E;&#x4FDD;&#x5411;&#x540E;&#x517C;&#x5BB9;&#x6027;&#x3002;</li>
+<li>Go &#x8BB8;&#x53EF;&#x8BC1;&#x662F;&#x5B8C;&#x5168;&#x5F00;&#x653E;&#x6E90;&#x4EE3;&#x7801;&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-简介.html" class="navigation navigation-prev " aria-label="Previous page: 简介">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03-安装 Go.html" class="navigation navigation-next " aria-label="Next page: 安装 Go">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"什么是Go？","level":"1.2.2","depth":2,"next":{"title":"安装 Go","level":"1.2.3","depth":2,"path":"chapter01/03-安装 Go.md","ref":"chapter01/03-安装 Go.md","articles":[]},"previous":{"title":"简介","level":"1.2.1","depth":2,"path":"chapter01/01-简介.md","ref":"chapter01/01-简介.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter01/02-什么是Go？.md","mtime":"2021-03-09T12:53:51.994Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-09T13:49:23.770Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
